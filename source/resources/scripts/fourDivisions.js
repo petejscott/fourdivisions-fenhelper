@@ -1,12 +1,12 @@
 'use strict';
 
-; (function(fenParser, pieceDragHandler) {
+; (function(fenParser, pieceDragHandler, urlLib) {
 	
 	var FEN_DEFAULT_VALUE = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 	
 	function init() {
 				
-		var urlParams = getUrlParams(window.location);
+		var urlParams = urlLib.getUrlParams(window.location);
 		
 		if (urlParams) {
 			var fen = urlParams["fen"];
@@ -18,19 +18,6 @@
 				submitFen(fen);
 			}
 		}
-	}
-	
-	function getUrlParams(url) {
-		var match;
-		var pl = /\+/g; 
-        var search = /([^&=]+)=?([^&]*)/g;
-		var decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); };
-        var query  = url.search.substring(1);
-		var urlParams = {};
-		while (match = search.exec(query)) {
-		   urlParams[decode(match[1])] = decode(match[2]);
-		}
-		return urlParams;
 	}
 	
 	function submitFen(inputFen) {		
@@ -73,4 +60,4 @@
 	
 	init();
 	
-})(fenParser, pieceDragHandler);
+})(fenParser, pieceDragHandler, urlLib);

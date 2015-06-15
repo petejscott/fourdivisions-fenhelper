@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-; var pieceDragHandler = (function(fenMaker) {
+; var pieceDragHandler = (function(fenMaker, urlLib) {
 
     var draggable = null;
     var dragSourceElement = null;
@@ -74,22 +74,8 @@
         return false;
     }
 	
-	// TODO: duplicated code! (from fourDivisions.js)
-	function getUrlParams(url) {
-		var match;
-		var pl = /\+/g; 
-        var search = /([^&=]+)=?([^&]*)/g;
-		var decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); };
-        var query  = url.search.substring(1);
-		var urlParams = {};
-		while (match = search.exec(query)) {
-		   urlParams[decode(match[1])] = decode(match[2]);
-		}
-		return urlParams;
-	}
-
     function handleFenOutput(fen) {
-		var urlParams = getUrlParams(window.location);
+		var urlParams = urlLib.getUrlParams(window.location);
 		var url = window.location.href.replace(window.location.search, "");
 		url += "?fen=" + fen;
 		window.location.href = url;		
@@ -131,4 +117,4 @@
 	return { init : init };
 	
 
-})(fenMaker);
+})(fenMaker, urlLib);
