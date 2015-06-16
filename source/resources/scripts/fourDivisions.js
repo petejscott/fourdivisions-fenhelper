@@ -22,11 +22,11 @@
 		originalNotationElement.value = inputFen;
 		
 		var game = fenParser.parse(inputFen);
-		makeBoardHtml(boardContainer, game.pieceArray);
+		boardContainer.innerHTML = makeBoardHtml(game.pieceArray);
 		pieceDragHandler.init();
 	}
 	
-	function makeBoardHtml(board, pieceArray) {
+	function makeBoardHtml(pieceArray) {
 		
 		var html = "";
 		
@@ -51,7 +51,7 @@
 			}
 		}
 		
-		board.innerHTML = html;
+		return html;
 	}
 	
 	init();
