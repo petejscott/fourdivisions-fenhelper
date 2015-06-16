@@ -6,7 +6,7 @@
         var piecePart = makeFenPiecePart(boardElement);
         var statePart = makeFenStatePart(originalNotation);
         var fen = piecePart + " " + statePart;
-        if (callback) callback(fen);
+        if (callback) callback(fen); //TODO: I think I'd rather use pubsub here.
     }
     function makeFenPiecePart(boardElement) {
 

@@ -53,10 +53,6 @@
             this.innerHTML = e.dataTransfer.getData('text/html'); // fill the target square
             this.setAttribute('data-piece', piece);
 
-            //var sourceIndex = dragSourceElement.getAttribute('data-index');
-            //var destinationIndex = this.getAttribute('data-index');
-            //moveHandler.makeMove(sourceIndex, destinationIndex);
-
             // get the original notation
             var originalNotation = null;
             var originalNotationElement = document.querySelector("#originalNotation");

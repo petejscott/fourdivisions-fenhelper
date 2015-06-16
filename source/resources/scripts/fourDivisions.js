@@ -5,18 +5,14 @@
 	var FEN_DEFAULT_VALUE = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 	
 	function init() {
-				
 		var urlParams = urlLib.getUrlParams(window.location);
-		
-		if (urlParams) {
-			var fen = urlParams["fen"];
-			if (typeof(fen) === 'undefined' || fen.length === 0) {
-				var url = window.location.href.replace(window.location.search, "");
-				url += "?fen=" + FEN_DEFAULT_VALUE;
-				window.location.href = url;
-			} else {
-				submitFen(fen);
-			}
+		var fen = urlParams["fen"];
+		if (typeof(fen) === 'undefined' || fen.length === 0) {
+			var url = window.location.href.replace(window.location.search, "");
+			url += "?fen=" + FEN_DEFAULT_VALUE;
+			window.location.href = url;
+		} else {
+			submitFen(fen);
 		}
 	}
 	
