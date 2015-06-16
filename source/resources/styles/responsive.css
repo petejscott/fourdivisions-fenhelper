@@ -1,0 +1,18 @@
+@media screen and (min-width: 1024px) {
+	.board { 
+		display: table;
+		table-layout:fixed;
+		border: 1px solid #004958;
+		font-size:3rem;
+		height: 8em;
+		width: 8em;
+		box-sizing:border-box;
+	}
+	main {
+		width: 60rem;
+	}
+	.game {
+		flex-wrap: nowrap;
+		justify-content: space-between;
+	}
+}

@@ -19,7 +19,6 @@ main {
 	justify-content: space-between;
 	align-items: stretch;
 	align-content: stretch;
-	width:60rem;
 	margin:0 auto;	
 	box-shadow: 0 0 2rem rgba(0,0,0,0.5);
 }
@@ -53,9 +52,12 @@ article {
 }
 .game {
 	display:flex;
-	justify-content: space-between;
+	justify-content:flex-start;
+	flex-wrap: wrap-reverse;
 }
-
+.gameData {
+	margin-bottom:1rem;
+}
 
 footer {
 	background:#eee;	
