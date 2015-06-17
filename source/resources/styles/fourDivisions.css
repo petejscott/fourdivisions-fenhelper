@@ -58,6 +58,12 @@ article {
 .gameData {
 	margin-bottom:1rem;
 }
+.gameData ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+	line-height: 2em;
+}
 
 footer {
 	background:#eee;	

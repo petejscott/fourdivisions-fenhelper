@@ -9,3 +9,12 @@ QUnit.test( "fenParser.parse - when valid fen is provided, piece array has lengt
 	
 	assert.ok( game.pieceArray.length === 64 );
 });
+
+QUnit.test( "fenParser.parse - when empty fen is provided, piece array is empty", function (assert)
+{
+	var fen = '';
+	var game = fenParser.parse(fen);
+	
+	assert.ok( game.pieceArray.length === 0 );
+});
+

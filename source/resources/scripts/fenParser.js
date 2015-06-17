@@ -53,13 +53,25 @@
 	}
 	
 	function makeGameData(fen) {
-		return { 
-			"ActiveTurn" : "w",
-			"EnPassant" : "-",
-			"Castling" : "KQkq",
-			"HalfMoveCount" : 0,
-			"FullMoves" : 1
+		
+		var gameData = {
+			"ActiveTurn" : null,
+			"EnPassant" : null,
+			"Castling" : null,
+			"HalfMoveClock" : null,
+			"FullMoveCount" : null
 		}
+		
+		var gameDataFromFen = fen.split(' ');
+		if (gameDataFromFen.length < 5) return gameData;
+		
+		gameData.ActiveTurn = gameDataFromFen[0];
+		gameData.Castling = gameDataFromFen[1];
+		gameData.EnPassant = gameDataFromFen[2];
+		gameData.HalfMoveClock = gameDataFromFen[3];
+		gameData.FullMoveCount = gameDataFromFen[4];
+		
+		return gameData;
 	}
 	
 	return {

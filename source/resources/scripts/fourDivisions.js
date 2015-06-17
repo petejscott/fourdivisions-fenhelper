@@ -18,12 +18,27 @@
 	
 	function submitFen(inputFen) {		
 		var boardContainer = document.querySelector(".board");
+		var gameDataContainer = document.querySelector(".gameData");
 		var originalNotationElement = document.querySelector("#originalNotation");
 		originalNotationElement.value = inputFen;
 		
 		var game = fenParser.parse(inputFen);
 		boardContainer.innerHTML = makeBoardHtml(game.pieceArray);
+		gameDataContainer.innerHTML = makeGameDataHtml(game.gameData);
 		pieceDragHandler.init();
+	}
+	
+	function makeGameDataHtml(gameData) {
+		console.log(gameData);
+		var html = "";
+		html += "<ul>";
+		html += "<li>ActiveTurn: " + gameData.ActiveTurn + "</li>";
+		html += "<li>Available Castling: " + gameData.Castling + "</li>";
+		html += "<li>EnPassant Target: " + gameData.EnPassant + "</li>";
+		html += "<li>Half Moves (since last capture): " + gameData.HalfMoveClock + "</li>";
+		html += "<li>Number of Full Moves: " + gameData.FullMoveCount + "</li>";
+		html += "</ul>";
+		return html;
 	}
 	
 	function makeBoardHtml(pieceArray) {
