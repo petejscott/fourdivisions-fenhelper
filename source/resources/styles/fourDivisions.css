@@ -25,7 +25,7 @@ main {
 header {
 	background:#333;
 	flex-grow: 0;
-	flex-shrink: 1;
+	flex-shrink: 0;
 	color:#f3f3f3;
 	border-bottom:5px solid #ed8000;
 	box-shadow: 0 0 2rem rgba(0,0,0,0.25);
@@ -63,6 +63,12 @@ article {
 	padding:0;
 	list-style:none;
 	line-height: 2em;
+}
+
+aside {
+	background:#f6f6f6;
+	flex-grow:1;
+	flex-shrink:0;
 }
 
 footer {

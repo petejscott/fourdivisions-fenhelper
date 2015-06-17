@@ -1,6 +1,6 @@
 'use strict';
 
-; (function(fenParser, pieceDragHandler, urlLib) {
+; (function(fenParser, pieceDragHandler, urlLib, gameStorage) {
 	
 	var FEN_DEFAULT_VALUE = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 	
@@ -71,4 +71,4 @@
 	
 	init();
 	
-})(fenParser, pieceDragHandler, urlLib);
+})(fenParser, pieceDragHandler, urlLib, gameStorage);
