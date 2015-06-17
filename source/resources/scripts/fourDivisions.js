@@ -30,7 +30,7 @@
 	
 	function makeGameDataHtml(gameData) {
 		console.log(gameData);
-		var html = "";
+		var html = "<p>Note that only ActiveTurn and Number of Full Moves are accurately represented at present.</p>";
 		html += "<ul>";
 		html += "<li>ActiveTurn: " + gameData.ActiveTurn + "</li>";
 		html += "<li>Available Castling: " + gameData.Castling + "</li>";
