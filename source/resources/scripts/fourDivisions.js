@@ -1,6 +1,6 @@
 'use strict';
 
-; (function(fenParser, pieceDragHandler, urlLib, gameStorage) {
+; (function(fenParser, pieceDragHandler, urlLib, gameStorage, gameHandler) {
 	
 	var FEN_DEFAULT_VALUE = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 	
@@ -14,6 +14,8 @@
 		} else {
 			submitFen(fen);
 		}
+		
+		gameHandler.init();
 	}
 	
 	function submitFen(inputFen) {		
@@ -71,4 +73,4 @@
 	
 	init();
 	
-})(fenParser, pieceDragHandler, urlLib, gameStorage);
+})(fenParser, pieceDragHandler, urlLib, gameStorage, gameHandler);

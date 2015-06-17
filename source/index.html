@@ -23,16 +23,25 @@
 				<section class="board">
 				</section>
 				<section class="gameData">
-					gameData placeholder
 				</section>
 			</div>
 		</article>
+		<aside class="container hidden">
+			<h3>Locally Saved Games</h3>
+			
+			<ul class="savedGames"></ul>
+			
+			<textarea id="savedGameImportField" class="hidden"></textarea>
+			<button id="importSavedGame">Import</button>
+			
+		</aside>
 		<footer class="container">
 			<p>&copy; <a href="http://www.teknine.com/">www.teknine.com</a> 2015. Source available on <a href="https://github.com/petejscott/fourdivisions-fenhelper">GitHub</a></p>
 		</footer>
 	</main>	
 	<script src="resources/scripts/urlLib.js"></script>
 	<script src="resources/scripts/gameStorage.js"></script>
+	<script src="resources/scripts/gameHandler.js"></script>
 	<script src="resources/scripts/pieceMapper.js"></script>
 	<script src="resources/scripts/fenParser.js"></script>
 	<script src="resources/scripts/fenMaker.js"></script>
